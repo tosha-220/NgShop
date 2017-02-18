@@ -1,8 +1,19 @@
-import { Component } from '@angular/core';
+import { Component,OnInit} from '@angular/core';
+import {HelloService} from './app.service';
 
 @Component({
   moduleId: module.id,
   selector: 'my-app',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  providers: [HelloService]
 })
-export class AppComponent  { name = 'World'; }
+export class AppComponent implements OnInit{ 
+  value=["offline"];
+  constructor(private helloService: HelloService) { 
+    }
+
+  ngOnInit(): void {
+    this.helloService.toDo().then(value=>this.value=value);
+  }
+}
+
