@@ -1,5 +1,5 @@
-import { Component,OnInit} from '@angular/core';
-import {HelloService} from './app.service';
+import {Component, OnInit} from "@angular/core";
+import {HelloService} from "./app.service";
 
 @Component({
   moduleId: module.id,
@@ -8,12 +8,13 @@ import {HelloService} from './app.service';
   providers: [HelloService]
 })
 
-export class AppComponent implements OnInit{ 
-  value=["offline"];
-  constructor(private helloService: HelloService) { 
-    }
+export class AppComponent implements OnInit {
+  value: String = "offline";
+
+  constructor(private helloService: HelloService) {
+  }
 
   ngOnInit(): void {
-    this.helloService.toDo().then(value=>this.value=value);
+    this.helloService.connect().subscribe(r => this.value = r.json());
   }
 }
