@@ -15,6 +15,13 @@
 	
 	<dependencies>
 			
+			<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-mapper-asl</artifactId>
+		    <version>1.9.13</version>
+		</dependency>
+			
 			<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
@@ -56,9 +63,7 @@
 		    <artifactId>spring-web</artifactId>
 		    <version>4.3.6.RELEASE</version>
 		</dependency>
-				
-		
-		
+					
 			<!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.codec -->
 		<dependency>
 		    <groupId>org.apache.directory.studio</groupId>
