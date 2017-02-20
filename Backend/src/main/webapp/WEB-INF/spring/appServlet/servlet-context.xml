@@ -14,9 +14,14 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
+<<<<<<< HEAD
 
 	<context:component-scan base-package="netckr.shop" />
 	
 	
+=======
+	
+	<context:component-scan base-package="netckr.shop" />
+>>>>>>> fc7cc88862383369c25a1965a6f39d08d13767c7
 	
 </beans:beans>
