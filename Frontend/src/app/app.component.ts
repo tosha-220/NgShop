@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {HelloService} from "./app.service";
+import {Hello} from "./api/Hello";
 
 @Component({
   moduleId: module.id,
@@ -9,12 +10,12 @@ import {HelloService} from "./app.service";
 })
 
 export class AppComponent implements OnInit {
-  value: String = "offline";
+  value: Hello = {value: "offline"};
 
   constructor(private helloService: HelloService) {
   }
 
   ngOnInit(): void {
-    this.helloService.connect().subscribe(r => this.value = r.json());
+    this.helloService.connect().subscribe(r => this.value = r);
   }
 }
