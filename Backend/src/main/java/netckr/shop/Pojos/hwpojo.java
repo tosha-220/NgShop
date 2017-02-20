@@ -1,12 +1,10 @@
 package netckr.shop.Pojos;
  
 public class hwpojo {
- 
-    private int id;
-    private String str;
+     	private int id;
+   	private String str;
     
-    public hwpojo() {
-		super();
+    	public hwpojo() {
 	}
 	public int getId() {
 		return id;
