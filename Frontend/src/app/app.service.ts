@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import {Observable} from "rxjs";
 import {Hello} from "./api/Hello";
+import {baseUrl} from "./common";
 import "rxjs/add/operator/map";
 
 
@@ -12,6 +13,6 @@ export class HelloService {
   }
 
   connect(): Observable<Hello> {
-    return this.http.get("http://localhost:8080/").map(res => res.json());
+    return this.http.get(baseUrl).map(res => res.json());
   }
 }
