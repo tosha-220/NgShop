@@ -1,21 +1,14 @@
-import {Component, OnInit} from "@angular/core";
-import {HelloService} from "./app.service";
-import {Hello} from "./api/Hello";
+import {Component} from "@angular/core";
+import {ProductService} from "./product.service";
 
 @Component({
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: 'app.component.html',
-  providers: [HelloService]
+  styleUrls: ['./app.component.css'],
+  providers: [ProductService]
 })
 
-export class AppComponent implements OnInit {
-  value: Hello = {value: "offline"};
+export class AppComponent {
 
-  constructor(private helloService: HelloService) {
-  }
-
-  ngOnInit(): void {
-    this.helloService.connect().subscribe(r => this.value = r);
-  }
 }

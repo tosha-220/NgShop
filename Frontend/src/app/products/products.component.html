@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of products</title>
+</head>
+<body>
+<h2>Products</h2>
+<ul class="products">
+  <li *ngFor="let product of products"
+      [class.selected]="product === selectedProduct"
+      (click)="onSelect(product)">
+    <span class="badge">{{product.id}}</span> {{product.title}}
+  </li>
+</ul>
+<div *ngIf="selectedProduct">
+  <h2>
+    {{selectedProduct.title | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+</body>
+</html>
