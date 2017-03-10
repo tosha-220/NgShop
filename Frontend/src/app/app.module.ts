@@ -8,10 +8,11 @@ import {AppRoutingModule} from "./app-routing.module";
 import {ProductService} from "./product.service";
 import {CarouselModule,ButtonModule,DialogModule,GrowlModule} from 'primeng/primeng';
 import {RouteService} from "./route.service";
+import {NavigationComponent} from "./navigation.component";
 
 @NgModule({
   imports: [BrowserModule, HttpModule, AppRoutingModule,CarouselModule,ButtonModule,DialogModule,GrowlModule],
-  declarations: [AppComponent, ProductComponent, ProductsComponent],
+  declarations: [AppComponent, ProductComponent, ProductsComponent, NavigationComponent],
   bootstrap: [AppComponent],
   providers: [ProductService,RouteService,
   {
