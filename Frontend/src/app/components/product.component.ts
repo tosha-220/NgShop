@@ -3,7 +3,8 @@ import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Location} from "@angular/common";
 import {Product} from "../api/product";
-import {ProductService} from "../product.service";
+import {ProductService} from "../service/product.service";
+import {Message} from "primeng/components/common/api";
 
 @Component({
   moduleId: module.id,
@@ -13,6 +14,7 @@ import {ProductService} from "../product.service";
 })
 export class ProductComponent implements OnInit {
   product: Product;
+  msgs: Message[] = [];
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute,
@@ -22,7 +24,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.route.params
       .switchMap((params: Params) => this.productService.getProduct(+params['id']))
-      .subscribe(product => this.product = product);
+      .subscribe(product => this.product = product,error =>  this.msgs = error);
   }
 
   goBack(): void {

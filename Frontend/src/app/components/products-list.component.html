@@ -1,0 +1,30 @@
+<div *ngIf="simpleList">
+  <p-growl [value]="msgs"></p-growl>
+  <div *ngIf="simpleList" class="list">
+    <p-carousel headerText="Products" align="center" [value]="simpleList">
+      <template let-product pTemplate="item">
+        <div align="center">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-12"><img [src]="getImage(product.id)"></div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-12">{{product.title}}</div>
+          </div>
+
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-12">{{product.price}} руб.</div>
+          </div>
+
+          <div>
+            <button (click)="addToCart(product)">Add to cart</button>
+          </div>
+
+          <div>
+            <button (click)="gotoDetail(product)">View Details</button>
+          </div>
+        </div>
+      </template>
+    </p-carousel>
+  </div>
+</div>

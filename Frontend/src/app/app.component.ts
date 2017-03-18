@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {ProductService} from "./product.service";
+import {ProductService} from "./service/product.service";
 
 @Component({
   moduleId: module.id,

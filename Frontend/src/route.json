@@ -1,3 +1,6 @@
 {
-  "link":"http://localhost:8080/products"
+  "listUrl":"http://localhost:8080/items",
+  "getByIdUrl":"http://localhost:8080/get",
+  "listCategoriesUrl":"./list-categories.json",
+  "imageUrl":"http://localhost:8080/image"
 }

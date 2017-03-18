@@ -1,0 +1,32 @@
+<div class="cart">
+  <div *ngIf="totalSum != 0">
+    <h3 class="first" align="center">CART</h3>
+    <p-dataTable [value]="cart">
+      <p-column field="item.title" header="Title"></p-column>
+      <p-column field="quantity" header="Quantity"></p-column>
+      <p-column field="sum" header="Price"></p-column>
+    </p-dataTable>
+    <div>Total sum: {{totalSum}}</div>
+  </div>
+  <div *ngIf="totalSum ==0" align="center">Cart is empty</div>
+</div>
+<table class="cart" id="tg" align="center" *ngIf="totalSum>0">
+  <tr>
+    <th width="120">Title</th>
+    <th width="120">Quantaty</th>
+    <th width="120">Sum</th>
+  </tr>
+  <tr *ngFor="let item of cart">
+    <td align="center">{{item.item.title}}</td>
+    <td class="col-sm-1 col-md-1 hidden-xs" style="text-align: center">
+      <span (click)=changeQuantity(item.item.title,-1) class="glyphicon glyphicon-minus pointer"></span>
+      {{item.quantity}}
+      <span (click)=changeQuantity(item.item.title,1) class="glyphicon glyphicon-plus pointer"></span>
+    </td>
+    <td align="center">{{item.sum}}</td>
+    <button type="button" (click)="removeByTitle(item.item.title)" class="btn btn-danger">
+      <span class="glyphicon glyphicon-remove"></span> Remove
+    </button>
+  </tr>
+  <div *ngIf="totalSum ==0" align="center">Cart is empty</div>
+</table>

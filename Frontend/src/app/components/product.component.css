@@ -1,3 +1,9 @@
+.product{
+  margin-top: 100px;
+  margin-right: 20px;
+  width: 75%;
+  float: right;
+}
 label {
   display: inline-block;
   width: 6em;
@@ -12,12 +18,11 @@ input {
 }
 button {
   margin-top: 20px;
-  font-family: Arial;
   background-color: #eee;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
-  cursor: pointer; cursor: hand;
+  cursor: hand;
 }
 button:hover {
   background-color: #cfd8dc;

@@ -1,11 +1,15 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {ProductComponent} from "./product/product.component";
-import {ProductsComponent} from "./products/products.component";
+import {ProductsComponent} from "./components/products-list.component";
+import {ProductComponent} from "./components/product.component";
+import {CategoriesComponent} from "./components/categories-list.component";
+import {CartComponent} from "./components/cart.component";
+import {NavigationComponent} from "./components/navigation.component";
 
 const routes: Routes = [
   {path: 'detail/:id', component: ProductComponent},
-  {path: 'products', component: ProductsComponent}
+  {path: 'item/:id', component: ProductsComponent},
+  {path: 'cart', component: CartComponent}
 ];
 
 @NgModule({

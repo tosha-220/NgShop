@@ -1,0 +1,78 @@
+.categories {
+  padding-top: 50px;
+  margin: 50px 0 1em;
+  /*padding: 5px;*/
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  list-style-type: none;
+  width: 100px;
+}
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.title {
+  height: 36px;
+  margin: 10px 0 1em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 10em;
+}
+
+.categories {
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.title div {
+  /*margin-top: -40px;*/
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  /*margin: .5em;*/
+  padding: .6em 0;
+  /*height: 1.6em;*/
+  border-radius: 9px;
+  height: 36px;
+  /*padding: 5px;*/
+  /*text-decoration: none;*/
+  /*font-weight: bold;*/
+  /*border-left: 5px solid #33ADFF;*/
+  display: block;
+}
+
+.title div:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+
+}
+
+.title div.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+
+.title .text {
+  position: relative;
+  height: 36px;
+  top: -3px;
+}
+
+button {
+  /*font-family: Tahoma;*/
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  /*cursor: pointer;*/
+  cursor: hand;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}

@@ -1,3 +1,5 @@
+<div class="product">
+<p-growl [value]="msgs"></p-growl>
 <div *ngIf="product">
   <h2>{{product.title}} information</h2>
   <div>
@@ -9,4 +11,5 @@
   <div>
     <label>description: </label>{{product.description}}</div>
   <button (click)="goBack()">Back</button>
+</div>
 </div>
