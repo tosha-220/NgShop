@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="net.ckr.shop">
+	<logger name="net.schastny.contactmanager">
 		<level value="info" />
 	</logger>
 	

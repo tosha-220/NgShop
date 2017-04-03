@@ -1,30 +1,23 @@
-<div *ngIf="simpleList">
-  <p-growl [value]="msgs"></p-growl>
-  <div *ngIf="simpleList" class="list">
-    <p-carousel headerText="Products" align="center" [value]="simpleList">
-      <template let-product pTemplate="item">
-        <div align="center">
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12"><img [src]="getImage(product.id)"></div>
-          </div>
-
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12">{{product.title}}</div>
-          </div>
-
-          <div class="ui-grid-row">
-            <div class="ui-grid-col-12">{{product.price}} руб.</div>
-          </div>
-
+<p-growl [value]="msgs"></p-growl>
+<div *ngIf="simpleList?.length > 0" class="list">
+  <p-dataGrid [value]="simpleList" [paginator]="true" [rows]="18">
+    <template let-product pTemplate="item">
+      <div style="padding:20px" class="ui-g-12 ui-md-4">
+        <p-panel [header]="product?.title" [style]="{'text-align':'center'}">
+          <img [src]="getImage(product?.id)">
+          <div style="margin-top: 10px;margin-bottom: -5px">{{product?.price}} руб.</div>
+          <hr class="ui-widget-content" style="border-top:0">
           <div>
-            <button (click)="addToCart(product)">Add to cart</button>
+            <button (click)="gotoDetail(product)" class="btn btn-info" style="margin-bottom: 5px">View Details</button>
           </div>
-
           <div>
-            <button (click)="gotoDetail(product)">View Details</button>
+            <button (click)="addToCart(product)" class="btn btn-info">+</button>
           </div>
-        </div>
-      </template>
-    </p-carousel>
-  </div>
+        </p-panel>
+      </div>
+    </template>
+  </p-dataGrid>
+</div>
+<div align="center" *ngIf="simpleList?.length === 0">
+  Items not found
 </div>

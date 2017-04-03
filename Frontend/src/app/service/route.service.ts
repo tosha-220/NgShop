@@ -18,7 +18,8 @@ export class RouteService {
 }
 export interface Routes {
   listUrl: string;
-  getByIdUrl:string;
+  detailsUrl: string;
   listCategoriesUrl: string;
-  imageUrl:string;
+  imageUrl: string;
+  searchUrl: string;
 }

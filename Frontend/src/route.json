@@ -1,6 +1,7 @@
 {
-  "listUrl":"http://localhost:8080/items",
-  "getByIdUrl":"http://localhost:8080/get",
-  "listCategoriesUrl":"./list-categories.json",
-  "imageUrl":"http://localhost:8080/image"
+  "listUrl":"http://localhost:8080/list",
+  "detailsUrl":"http://localhost:8080/details",
+  "listCategoriesUrl":"http://localhost:8080/categories",
+  "imageUrl":"http://localhost:8080/image",
+  "searchUrl":"http://localhost:8080/search"
 }

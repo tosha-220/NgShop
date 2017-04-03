@@ -1,22 +1,28 @@
-.cart{
-  display:table-header-group;
-  margin-top: 100px;
-  margin-right: 25%;
+.cart {
+  display: table-header-group;
+  margin-top: 2%;
+  margin-right: 15%;
   width: 50%;
   float: right;
+  margin-bottom: 10%;
   /*margin-top: 25%;*/
   /*margin-right: 50%;*/
 }
+
 #tg {
   border-collapse: collapse;
   border-spacing: 0;
   border-color: #ccc;
 }
 
+#tg th {
+  text-align: center;
+}
+
 #tg td {
   font-family: Arial, sans-serif;
   font-size: 14px;
-  padding: 10px 5px;
+  padding: 5px 5px;
   border-style: solid;
   border-width: 1px;
   overflow: hidden;
@@ -37,7 +43,7 @@
   word-break: normal;
   border-color: #ccc;
   color: #333;
-  background-color: #f0f0f0;
+  background-color: #5bc0de;
 }
 
 table.text {
@@ -52,4 +58,26 @@ table.text td {
 
 td.rightcol {
   text-align: right;
+}
+
+body {
+  background-color: #eee;
+}
+
+*[role="form"] {
+  max-width: 530px;
+  padding: 15px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+  margin-left: 5em;
+  margin-bottom: 1em;
+}
+
+.details {
+  margin-left: 7%;
+  /*margin-top: 10%;*/
 }

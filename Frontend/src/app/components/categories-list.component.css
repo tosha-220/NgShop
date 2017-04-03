@@ -1,78 +1,104 @@
-.categories {
-  padding-top: 50px;
-  margin: 50px 0 1em;
-  /*padding: 5px;*/
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-  list-style-type: none;
-  width: 100px;
+.nav-cat {
+  color: inherit;
 }
 
-.selected {
-  background-color: #CFD8DC !important;
+.category-heading {
+  width: 200px;
+  float: right;
+  display: block;
+  padding-left: 20%;
+  padding-bottom: 0%;
+  padding-right: 10%;
+  background-color: #ff5c4d;
+  margin-left: -5%;
+  margin-right: 15%;
+  margin-top: 9px;
+  border-radius: 5%;
+}
+
+.category-heading h4 {
+  font-size: 15px;
+  font-family: Arial;
+  font-style: normal;
   color: white;
 }
 
-.title {
-  height: 36px;
-  margin: 10px 0 1em 0;
-  list-style-type: none;
-  padding: 0;
-  width: 10em;
+.category-heading h4:before {
+  float: left;
+  content: "\f0c9";
+  display: block;
+  float: left;
+  font-family: "FontAwesome";
+  font-size: 25px;
+  font-weight: normal;
+  text-align: center;
+  padding-right: 5%;
+  margin-top: -5px;
 }
 
-.categories {
-  margin-top: 50px;
+/*cписок категорий*/
+.categ {
+  float: left;
+  margin-left: 5.3%;
+  margin-top: -20px;
+  border-radius: 20px;
+}
+
+.single {
   margin-left: 10px;
+  margin-top: 0px;
+  background: #fcfcfc;
+  border: 1px solid #f0f0f0;
+  border-radius: 20px;
 }
 
-.title div {
-  /*margin-top: -40px;*/
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  /*margin: .5em;*/
-  padding: .6em 0;
-  /*height: 1.6em;*/
-  border-radius: 9px;
-  height: 36px;
-  /*padding: 5px;*/
-  /*text-decoration: none;*/
-  /*font-weight: bold;*/
-  /*border-left: 5px solid #33ADFF;*/
+.single h3.side-title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.single h3.side-title:after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: #ff173c;
   display: block;
+  margin-top: 6px;
 }
 
-.title div:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-
+.single ul {
+  margin-bottom: 0;
 }
 
-.title div.selected:hover {
-  background-color: #BBD8DC !important;
+.single li div {
   color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 40px;
+  display: block;
+  text-decoration: none;
+  background-color: #ff5c4d;
+  /*background-color: #0D47A1;*/
 }
 
-.title .text {
-  position: relative;
-  height: 36px;
-  top: -3px;
+.single li div:hover {
+  color: black;
 }
 
-button {
-  /*font-family: Tahoma;*/
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  /*cursor: pointer;*/
-  cursor: hand;
+.single li:last-child div {
+  border-bottom: 0;
 }
 
-button:hover {
-  background-color: #cfd8dc;
+.navbar-style {
+  background: linear-gradient(to bottom, #337ab7 0%, #ebedf0 90%);
+  border-bottom: hidden;
+}
+
+.navbar-new {
+  margin-left: 30px;
 }

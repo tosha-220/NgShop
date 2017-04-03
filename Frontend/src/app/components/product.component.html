@@ -1,15 +1,38 @@
 <div class="product">
-<p-growl [value]="msgs"></p-growl>
-<div *ngIf="product">
-  <h2>{{product.title}} information</h2>
-  <div>
-    <label>id: </label>{{product.id}}</div>
-  <div>
-    <label>tile: </label>{{product.title}}</div>
-  <div>
-    <label>price: </label>{{product.price}}</div>
-  <div>
-    <label>description: </label>{{product.description}}</div>
-  <button (click)="goBack()">Back</button>
-</div>
+  <p-growl [value]="msgs"></p-growl>
+  <div *ngIf="product">
+
+
+    <h2 align="center">{{product?.title}} information</h2>
+
+    <table class="table">
+      <thead class="thead-inverse">
+      </thead>
+      <img class="img" [src]="getImage(product?.id)">
+      <tbody>
+      <tr>
+        <th scope="row">Id</th>
+        <td>{{product?.id}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Title</th>
+        <td>{{product?.title}}</td>
+
+      </tr>
+      <tr>
+        <th scope="row">Price</th>
+        <td>{{product?.price}} руб.</td>
+
+      </tr>
+      <tr>
+        <th scope="row">Description</th>
+        <td style="width: 10%">{{product?.description}}</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="back">
+    <button (click)="goBack()">Back</button>
+  </div>
 </div>
