@@ -12,16 +12,19 @@ import {Product} from "../api/product.model";
 @Injectable()
 export class ProductService {
 
-  constructor(private http: Http, private routeService: RouteService) {
+  constructor(private http: Http,
+              private routeService: RouteService) {
   }
 
   getListProducts(categoryId: number): Observable<Product[]> {
-    return this.http.get(this.routeService.routes.listUrl + `/${categoryId}`).map(res => res.json()).catch(this.handleError);
+    return this.http.get(this.routeService.routes.listUrl + `/${categoryId}`)
+      .map(res => res.json()).catch(this.handleError);
   }
 
 
   getProduct(id: number): Observable<Product> {
-    return this.http.get(this.routeService.routes.detailsUrl + `/${id}`).map(r => r.json()).catch(this.handleError);
+    return this.http.get(this.routeService.routes.detailsUrl + `/${id}`)
+      .map(r => r.json()).catch(this.handleError);
   }
 
   getImage(id: number): String {
@@ -29,7 +32,8 @@ export class ProductService {
   }
 
   search(title: string): Observable<Product> {
-    return this.http.get(this.routeService.routes.searchUrl + `/${title}`).map(r => r.json()).catch(this.handleError);
+    return this.http.get(this.routeService.routes.searchUrl + `/${title}`)
+      .map(r => r.json()).catch(this.handleError);
   }
 
   private handleError(error: Response | any) {

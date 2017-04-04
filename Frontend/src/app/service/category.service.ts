@@ -12,11 +12,13 @@ import {Categories} from "../api/category.model";
 @Injectable()
 export class CategoriesService {
 
-  constructor(private http: Http, private routeService: RouteService) {
+  constructor(private http: Http,
+              private routeService: RouteService) {
   }
 
   getCategories(): Observable<Categories[]> {
-    return this.http.get(this.routeService.routes.listCategoriesUrl).map(res => res.json()).catch(this.handleError);
+    return this.http.get(this.routeService.routes.listCategoriesUrl)
+      .map(res => res.json()).catch(this.handleError);
   }
 
   private handleError(error: Response | any) {
@@ -24,5 +26,4 @@ export class CategoriesService {
     msgs.push({severity: 'error', summary: 'Error Message', detail: 'No connection'});
     return Observable.throw(msgs);
   }
-
 }

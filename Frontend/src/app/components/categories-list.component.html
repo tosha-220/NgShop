@@ -25,7 +25,8 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li *ngFor="let category of categories">
-            <a routerLink="/item/{{category?.id}}" routerLinkActive="active" class="nav-cat">{{category?.title}}</a>
+            <a routerLink="/item/{{category?.id}}" routerLinkActive="active"
+               class="nav-cat">{{category?.title}}</a>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -44,7 +45,8 @@
       <div class="single category" style="width: 200px">
         <ul class="list-unstyled">
           <li *ngFor="let category of categories">
-            <div align="center" routerLink="/item/{{category?.id}}" routerLinkActive="active">{{category?.title}}</div>
+            <div align="center" routerLink="/item/{{category?.id}}"
+                 routerLinkActive="active">{{category?.title}}</div>
           </li>
         </ul>
       </div>

@@ -22,7 +22,8 @@ export class CartService {
 
   productsUrl: string = "http://localhost:8080/buy";
 
-  constructor(private http: Http, private routeService: RouteService) {
+  constructor(private http: Http,
+              private routeService: RouteService) {
   }
 
   saveCart(cart: Cart[]) {
@@ -86,9 +87,8 @@ export class CartService {
 
   buy(user: User): Observable<any> {
     let headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
-    console.log('Saving cart ' + JSON.stringify(new Order(this.cart, user, this.totalSum)));
-    console.log('product ' + JSON.stringify(JSON.stringify(this.cart[0].item)));
-    return this.http.post(this.productsUrl, JSON.stringify(new Order(this.cart, user, this.totalSum)), {headers: headers})
+    return this.http.post(this.productsUrl,
+      JSON.stringify(new Order(this.cart, user, this.totalSum)), {headers: headers})
       .map(this.goodInfo).catch(this.handleError);
   }
 

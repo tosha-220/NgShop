@@ -1,11 +1,13 @@
 package netckr.shop.controllers;
 
 import netckr.shop.model.Product;
-import netckr.shop.model.User;
 import netckr.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
@@ -54,37 +56,5 @@ public class ProductController {
         Product productByTitle = this.productService.getProductByTitle(bookTitle);
         System.out.println(productByTitle.getTitle());
         return productByTitle;
-    }
-
-
-    @RequestMapping(value = "/posting", method = RequestMethod.POST, headers = "application/json")
-    public
-    @ResponseBody
-    User update(@RequestBody User user) {
-        System.out.println("hvbnvv");
-        return null;
-    }
-//    @RequestMapping(value = "/posting", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-//    public void createPerson(@RequestBody User user) {
-//        System.out.println("khkjhkmjh");
-////        personService.savePerson(personDTO);
-//    }
-
-
-    @RequestMapping(value = "/post", method = RequestMethod.POST, headers = "application/json")
-    public
-    @ResponseBody
-    User post() {
-        System.out.println("fsddg");
-        String json = "{paramsArray: [\"first\", 100],"
-                + "paramsObj: {one: \"two\", three: \"four\"},"
-                + "paramsStr: \"some string\"}";
-
-//        JSONParser parser = new JSONParser(json);
-
-//        Object obj = parser.parse(json);
-//        JSONObject jsonObj = (JSONObject) obj;
-//        System.out.println(jsonObj.get("paramsStr"));
-        return null;
     }
 }

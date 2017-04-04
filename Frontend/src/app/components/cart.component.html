@@ -18,7 +18,7 @@
         {{item.quantity}}
         <span (click)=changeQuantity(item?.item?.title,1) class="glyphicon glyphicon-plus pointer"></span>
       </td>
-      <td align="center">{{item.sum}}</td>
+      <td align="center">{{item?.sum}}</td>
       <td style="border-color: white">
         <button type="button" (click)="removeByTitle(item?.item?.title)" class="btn btn-danger">
           <span class="glyphicon glyphicon-remove"></span> Remove

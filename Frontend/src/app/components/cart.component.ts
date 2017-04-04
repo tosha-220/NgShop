@@ -13,7 +13,9 @@ import {Message} from "@angular/compiler/src/i18n/i18n_ast";
   styleUrls: ['cart.component.css']
 })
 export class CartComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private cartService: CartService, private location: Location) {
+  constructor(private route: ActivatedRoute,
+              private cartService: CartService,
+              private location: Location) {
   }
 
   cart: Cart[];

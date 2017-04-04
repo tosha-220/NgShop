@@ -19,12 +19,14 @@ export class CategoriesComponent implements OnInit {
   id: string;
 
   constructor(private router: Router,
-              private categoriesService: CategoriesService, private productService: ProductService) {
+              private categoriesService: CategoriesService,
+              private productService: ProductService) {
   }
 
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe(r => this.categories = r, error => this.msgs = error);
+    this.categoriesService.getCategories().subscribe(r => this.categories = r,
+      error => this.msgs = error);
   }
 
   cart() {
