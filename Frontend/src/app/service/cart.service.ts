@@ -15,12 +15,8 @@ import {Order} from "../api/order.model";
 @Injectable()
 export class CartService {
   cart: Cart[] = [];
-
   totalSum: number = 0;
-
   quantity: number = 1;
-
-  productsUrl: string = "http://localhost:8080/buy";
 
   constructor(private http: Http,
               private routeService: RouteService) {
@@ -29,18 +25,18 @@ export class CartService {
   saveCart(cart: Cart[]) {
     this.cart = cart;
     this.totalSum = 0;
-    for (var i = 0; i < cart.length; i++)
+    for (let i = 0; i < cart.length; i++)
       this.totalSum += cart[i].sum;
   }
 
   addToCart(item: Product) {
     if (this.cart.length == 0) {
-      var newCart: Cart = {item: item, sum: +[item.price], quantity: this.quantity};
+      let newCart: Cart = {item: item, sum: +[item.price], quantity: this.quantity};
       this.cart.push(newCart);
       this.totalSumIncr(item);
       return;
     }
-    for (var i = 0; i < this.cart.length; i++) {
+    for (let i = 0; i < this.cart.length; i++) {
       if (this.cart[i].item.title == item.title) {
         this.cart[i].quantity++;
         this.cart[i].sum += +[item.price];
@@ -49,7 +45,7 @@ export class CartService {
       }
     }
     this.totalSumIncr(item);
-    var secondCart: Cart = {item: item, sum: +[item.price], quantity: this.quantity};
+    let secondCart: Cart = {item: item, sum: +[item.price], quantity: this.quantity};
     this.cart.push(secondCart);
   }
 
@@ -79,7 +75,7 @@ export class CartService {
 
   calcTotalSum(cartEntity: Cart[]) {
     this.totalSum = 0;
-    for (var i = 0; i < cartEntity.length; i++) {
+    for (let i = 0; i < cartEntity.length; i++) {
       this.totalSum += cartEntity[i].sum;
 
     }
@@ -87,7 +83,7 @@ export class CartService {
 
   buy(user: User): Observable<any> {
     let headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
-    return this.http.post(this.productsUrl,
+    return this.http.post(this.routeService.routes.buyingUrl,
       JSON.stringify(new Order(this.cart, user, this.totalSum)), {headers: headers})
       .map(this.goodInfo).catch(this.handleError);
   }

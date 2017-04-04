@@ -22,4 +22,5 @@ export interface Routes {
   listCategoriesUrl: string;
   imageUrl: string;
   searchUrl: string;
+  buyingUrl: string;
 }

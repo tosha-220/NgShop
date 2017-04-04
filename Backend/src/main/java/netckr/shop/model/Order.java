@@ -1,6 +1,8 @@
 package netckr.shop.model;
 
 
+import java.util.Arrays;
+
 public class Order {
     private Cart cart[];
     private User user;
@@ -33,7 +35,7 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "cart=" + cart +
+                "cart=" + Arrays.toString(cart) +
                 ", user=" + user +
                 ", totalSum=" + totalSum +
                 '}';

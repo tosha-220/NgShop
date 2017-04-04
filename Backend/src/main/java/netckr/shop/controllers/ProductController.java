@@ -54,7 +54,6 @@ public class ProductController {
     @RequestMapping(value = "/search/{title}", method = RequestMethod.GET)
     public Product getProductByName(@PathVariable("title") String bookTitle) {
         Product productByTitle = this.productService.getProductByTitle(bookTitle);
-        System.out.println(productByTitle.getTitle());
         return productByTitle;
     }
 }

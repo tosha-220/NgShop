@@ -3,5 +3,6 @@
   "detailsUrl":"http://localhost:8080/details",
   "listCategoriesUrl":"http://localhost:8080/categories",
   "imageUrl":"http://localhost:8080/image",
-  "searchUrl":"http://localhost:8080/search"
+  "searchUrl":"http://localhost:8080/search",
+  "buyingUrl":"http://localhost:8080/buy"
 }
