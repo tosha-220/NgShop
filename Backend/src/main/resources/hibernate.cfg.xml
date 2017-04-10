@@ -5,6 +5,8 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<mapping class="netckr.shop.domain.Product" />
+		<mapping class="netckr.shop.model.Product" />
+		<mapping class="netckr.shop.model.OrderTable" />
+		<mapping class="netckr.shop.model.User" />
 	</session-factory>
 </hibernate-configuration>

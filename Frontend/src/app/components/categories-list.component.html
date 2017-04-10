@@ -1,0 +1,56 @@
+<p-growl [value]="msgs"></p-growl>
+<div class="container-fluid">
+  <div class="row" style="margin-top:10px;">
+    <div class="col-md-6">
+      <!--<h3>Company Logo</h3>-->
+      <img src="../../public/images/imgonline-com-ua-Resize-mK2C8wut1KjF.jpg"> NG-SHOP
+    </div>
+    <div class="col-md-6">
+      <div class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input id="id" class="form-control" placeholder="Search" [(ngModel)]="id">
+        </div>
+        <button (click)="search()" class="btn btn-info">Search</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="navbar navbar-style">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="category-heading">
+          <h4>CATEGORIES</h4>
+        </div>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li *ngFor="let category of categories">
+            <a routerLink="/item/{{category?.id}}" routerLinkActive="active"
+               class="nav-cat">{{category?.title}}</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a (click)="cart()" style="color: inherit"><span
+            class="glyphicon glyphicon-shopping-cart "></span>Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="categ">
+  <div class="row">
+    <div class="col-sm-4">
+      <!-- Category -->
+      <div class="single category" style="width: 200px">
+        <ul class="list-unstyled">
+          <li *ngFor="let category of categories">
+            <div align="center" routerLink="/item/{{category?.id}}"
+                 routerLinkActive="active">{{category?.title}}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

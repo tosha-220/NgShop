@@ -22,7 +22,6 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- Database Information -->
 
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
@@ -33,13 +32,14 @@
           p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.databaseurl}"
           p:username="${jdbc.username}" p:password="${jdbc.password}"/>
 
-    <!-- Hibernate 4 SessionFactory Bean definition -->
     <bean id="hibernate4AnnotatedSessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>netckr.shop.domain.Product</value>
+                <value>netckr.shop.model.Product</value>
+                <value>netckr.shop.model.Category</value>
+                <value>netckr.shop.model.User</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -51,12 +51,25 @@
         </property>
     </bean>
 
-    <!--BookDao and BookService beans-->
     <bean id="productDao" class="netckr.shop.dao.ProductDAOImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
     <bean id="productService" class="netckr.shop.service.ProductServiceImpl">
+    </bean>
+
+    <bean id="cartDao" class="netckr.shop.dao.CartDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="cartService" class="netckr.shop.service.CartServiceImpl">
+    </bean>
+
+    <bean id="categoryDao" class="netckr.shop.dao.CategoryDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="categoryService" class="netckr.shop.service.CategoryServiceImpl">
     </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">

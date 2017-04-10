@@ -1,3 +1,8 @@
 {
-  "link":"http://localhost:8080/products"
+  "listUrl":"http://localhost:8080/list",
+  "detailsUrl":"http://localhost:8080/details",
+  "listCategoriesUrl":"http://localhost:8080/categories",
+  "imageUrl":"http://localhost:8080/image",
+  "searchUrl":"http://localhost:8080/search",
+  "buyingUrl":"http://localhost:8080/buy"
 }
