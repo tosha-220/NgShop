@@ -23,4 +23,9 @@ export interface Routes {
   imageUrl: string;
   searchUrl: string;
   buyingUrl: string;
+  loginUrl: string;
+  addUrl: string;
+  delUrl: string;
+  logoutUrl: string;
+  verifyUrl: string;
 }

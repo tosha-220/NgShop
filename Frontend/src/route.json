@@ -4,5 +4,10 @@
   "listCategoriesUrl":"http://localhost:8080/categories",
   "imageUrl":"http://localhost:8080/image",
   "searchUrl":"http://localhost:8080/search",
-  "buyingUrl":"http://localhost:8080/buy"
+  "buyingUrl":"http://localhost:8080/buy",
+  "loginUrl":"http://localhost:8080/login",
+  "addUrl":"http://localhost:8080/add",
+  "delUrl":"http://localhost:8080/delete",
+  "logoutUrl":"http://localhost:8080/logout",
+  "verifyUrl":"http://localhost:8080/verify"
 }

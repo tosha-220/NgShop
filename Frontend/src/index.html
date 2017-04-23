@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Angular QuickStart</title>
+  <title>NgShop</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
@@ -10,6 +10,8 @@
   <link rel="stylesheet" type="text/css" href="node_modules/primeng/resources/primeng.min.css"/>
   <link rel="stylesheet" type="text/css" href="styles.css"/>
 
+  <script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script src="node_modules/core-js/client/shim.min.js"></script>
   <script src="node_modules/zone.js/dist/zone.js"></script>
@@ -20,6 +22,15 @@
 
   <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">-->
   <script>
+    function check() {
+      if (($('#title').val() != '') && ($('#price').val() != '') && ($('#description').val() != '') &&
+        ($('#file').val() != '')) {
+        $('#submit').removeAttr('disabled');
+      }
+      else {
+        $('#submit').attr('disabled', 'disable');
+      }
+    }
     System.import('main.js').catch(function (err) {
       console.error(err);
     });
@@ -28,7 +39,7 @@
 
 <body>
 <my-app>
-  <div id="outPopUp"><img src="public/images/products/spin.gif"></div>
+  <div id="outPopUp"><img src="public/images/spin.gif"></div>
 </my-app>
 </body>
 </html>

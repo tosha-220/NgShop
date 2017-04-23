@@ -1,14 +1,17 @@
 <div class="product">
   <p-growl [value]="msgs"></p-growl>
   <div *ngIf="product">
-
-
     <h2 align="center">{{product?.title}} information</h2>
-
+    <div align="center">
+      <button *ngIf="isLoggin()&&isAdmin()" (click)="deleteProduct(product.id)" class="btn btn-info">Delete
+      </button>
+    </div>
     <table class="table">
       <thead class="thead-inverse">
       </thead>
-      <img class="img" [src]="getImage(product?.id)">
+      <div class="img-div">
+        <img class="img" [src]="getImage(product?.id)">
+      </div>
       <tbody>
       <tr>
         <th scope="row">Id</th>
@@ -32,7 +35,8 @@
       </tbody>
     </table>
   </div>
-  <div class="back">
-    <button (click)="goBack()">Back</button>
+  <div>
+    <button style="float: left" (click)="goBack()" class="btn btn-info">Back</button>
+    <button style="float: right" (click)="addToCart(product)" class="btn btn-info">To cart</button>
   </div>
 </div>

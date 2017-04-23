@@ -81,10 +81,11 @@ export class CartService {
     }
   }
 
-  buy(user: User): Observable<any> {
-    let headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
+  buy(customer: User): Observable<any> {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    console.log(JSON.stringify(new Order(this.cart, customer, this.totalSum)));
     return this.http.post(this.routeService.routes.buyingUrl,
-      JSON.stringify(new Order(this.cart, user, this.totalSum)), {headers: headers})
+      JSON.stringify(new Order(this.cart, customer, this.totalSum)), {headers: headers})
       .map(this.goodInfo).catch(this.handleError);
   }
 

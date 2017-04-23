@@ -21,6 +21,15 @@ export class CategoriesService {
       .map(res => res.json()).catch(this.handleError);
   }
 
+  isLoggin() {
+    return !!localStorage.getItem('currentUser');
+  }
+
+  getUserName() {
+    let item = localStorage.getItem('currentUser');
+    return JSON.parse(item).username;
+  }
+
   private handleError(error: Response | any) {
     let msgs: Message[] = [];
     msgs.push({severity: 'error', summary: 'Error Message', detail: 'No connection'});

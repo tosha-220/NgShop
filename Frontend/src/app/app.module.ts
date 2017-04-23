@@ -17,14 +17,22 @@ import {DataTableModule} from "primeng/components/datatable/datatable";
 import {DataGridModule} from "primeng/components/datagrid/datagrid";
 import {PanelModule} from "primeng/components/panel/panel";
 import {FormsModule} from "@angular/forms";
+import {LoginComponent} from "./components/login.component";
+import {LoginService} from "./service/login.service";
+import {AddProductComponent} from "./components/add.product.component";
+import {AuthenticatedGuard} from "./service/authenticated.guard";
+import {LoginGuard} from "./service/login.guard";
+import {NotFoundComponent} from "./components/notfound.component";
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, AppRoutingModule, CarouselModule,FormsModule,
+  imports: [BrowserModule, HttpModule, AppRoutingModule, CarouselModule, FormsModule,
     ButtonModule, DialogModule, GrowlModule, DataTableModule, DataGridModule, PanelModule],
   declarations: [AppComponent, ProductComponent, ProductsListComponent,
-    NavigationComponent, CategoriesComponent, CartComponent],
+    NavigationComponent, CategoriesComponent, CartComponent, LoginComponent, AddProductComponent,
+    NotFoundComponent],
   bootstrap: [AppComponent],
-  providers: [ProductService, RouteService, CategoriesService, CartService,
+  providers: [ProductService, RouteService, CategoriesService, CartService, LoginService, AuthenticatedGuard,
+    LoginGuard,
     {
       provide: APP_INITIALIZER,
       useFactory: (route: RouteService) => {

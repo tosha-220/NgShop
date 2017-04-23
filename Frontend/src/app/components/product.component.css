@@ -5,6 +5,12 @@
 }
 
 .img {
+  width: 150px;
+  height: 150px;
+
+}
+
+.img-div {
   padding-top: 10%;
   padding-bottom: 10%;
   padding-left: 40%;
