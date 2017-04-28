@@ -1,38 +1,23 @@
 package netckr.shop.json;
 
-
+import lombok.Getter;
+import lombok.Setter;
 import netckr.shop.model.Customer;
 
 import java.util.Arrays;
 
 public class Order {
+    @Getter
+    @Setter
     private Cart cart[];
+
+    @Getter
+    @Setter
     private Customer customer;
+
+    @Getter
+    @Setter
     private int totalSum;
-
-    public Cart[] getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart[] cart) {
-        this.cart = cart;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public int getTotalSum() {
-        return totalSum;
-    }
-
-    public void setTotalSum(int totalSum) {
-        this.totalSum = totalSum;
-    }
 
     @Override
     public String toString() {

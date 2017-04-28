@@ -20,9 +20,12 @@ export class LoginService {
   headers = new Headers({'Content-Type': 'application/json'});
 
   token: string;
+  private loginUrl = "login";
+  private verifyUrl = "verify";
+  private logoutUrl = "logout";
 
   login(username: string, password: string) {
-    return this.http.post(this.routeService.routes.loginUrl, JSON.stringify(new Login(username, password)), {headers: this.headers})
+    return this.http.post(this.routeService.routes.url + this.loginUrl, JSON.stringify(new Login(username, password)), {headers: this.headers})
       .map((response: Response) => {
         let token = response.json() && response.json().token;
         if (token && token != "false") {
@@ -44,7 +47,7 @@ export class LoginService {
   }
 
   verifyToken() {
-    return this.http.post(this.routeService.routes.verifyUrl,
+    return this.http.post(this.routeService.routes.url + this.verifyUrl,
       JSON.stringify(this.getToken()), {headers: this.headers})
       .subscribe(res => {
         if (res.text() == "false") {
@@ -56,7 +59,7 @@ export class LoginService {
   logout() {
     this.token = null;
     localStorage.removeItem('currentUser');
-    return this.http.get(this.routeService.routes.logoutUrl).catch(this.handleError);
+    return this.http.get(this.routeService.routes.url + this.logoutUrl).catch(this.handleError);
   }
 
   private handleError(error: Response | any) {

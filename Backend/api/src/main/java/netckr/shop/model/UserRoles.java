@@ -1,63 +1,32 @@
 package netckr.shop.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user_role")
-public class UserRoles {
+public
+@NoArgsConstructor
+class UserRoles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
+    @Getter
+    @Setter
     private int roleId;
 
     @Column(name = "login")
+    @Getter
+    @Setter
     private String login;
 
     @Column(name = "role")
+    @Getter
+    @Setter
     private String role;
-
-//    @ManyToMany(mappedBy = "roles")
-//    private List<User> users;
-
-//    public List<User> getUsers() {
-//        return users;
-//    }
-//
-//    public void setUsers(List<User> users) {
-//        this.users = users;
-//    }
-
-    public int getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public UserRoles(String login, String role) {
-        this.login = login;
-        this.role = role;
-    }
-
-    public UserRoles() {
-    }
 
     @Override
     public String toString() {
@@ -66,5 +35,10 @@ public class UserRoles {
                 ", login='" + login + '\'' +
                 ", role='" + role + '\'' +
                 '}';
+    }
+
+    public UserRoles(String login, String role) {
+        this.login = login;
+        this.role = role;
     }
 }

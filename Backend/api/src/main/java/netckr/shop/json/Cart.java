@@ -1,10 +1,18 @@
 package netckr.shop.json;
 
+import lombok.Getter;
+import lombok.Setter;
 import netckr.shop.model.Product;
 
 public class Cart {
+    @Getter
+    @Setter
     private Product item;
+    @Getter
+    @Setter
     private int sum;
+    @Getter
+    @Setter
     private int quantity;
 
     @Override
@@ -14,29 +22,5 @@ public class Cart {
                 ", sum=" + sum +
                 ", quantity=" + quantity +
                 '}';
-    }
-
-    public int getSum() {
-        return sum;
-    }
-
-    public void setSum(int sum) {
-        this.sum = sum;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public Product getItem() {
-        return item;
-    }
-
-    public void setItem(Product item) {
-        this.item = item;
     }
 }

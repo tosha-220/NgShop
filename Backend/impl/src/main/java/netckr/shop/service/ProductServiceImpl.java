@@ -17,7 +17,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductDAO productDAO;
 
     @Transactional
-    public List simpleListProduct(int categoryId) {
+    public List<Product> simpleListProduct(int categoryId) {
         return productDAO.simpleListProduct(categoryId);
     }
 

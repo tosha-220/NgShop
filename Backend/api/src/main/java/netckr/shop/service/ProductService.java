@@ -8,7 +8,7 @@ public interface ProductService {
 
     Product getProduct(Integer id);
 
-    List simpleListProduct(int categoryId);
+    List<Product> simpleListProduct(int categoryId);
 
     String getImage(int id);
 

@@ -1,5 +1,8 @@
 package netckr.shop.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,24 +12,13 @@ public class Category {
     @Id
     @Column(name = "id")
     @GeneratedValue
+    @Getter
+    @Setter
     private Integer id;
 
     @Column(name = "title")
+    @Getter
+    @Setter
     private String title;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 }

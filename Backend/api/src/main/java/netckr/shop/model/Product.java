@@ -1,77 +1,47 @@
 package netckr.shop.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "goods")
-public class Product {
+public
+@NoArgsConstructor
+class Product {
     @Id
     @Column(name = "product_id")
     @GeneratedValue
+    @Getter
+    @Setter
     private Integer id;
 
     @Column(name = "category_id")
+    @Getter
+    @Setter
     private Integer categoryId;
 
     @Column(name = "title")
+    @Getter
+    @Setter
     private String title;
 
     @Column(name = "price")
+    @Getter
+    @Setter
     private int price;
 
     @Column(name = "description")
+    @Getter
+    @Setter
     private String description;
 
     @Column(name = "imageUrl")
+    @Getter
+    @Setter
     private String imageUrl;
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public Product(Integer categoryId, String title, int price, String description, String imageUrl) {
         this.categoryId = categoryId;
@@ -79,9 +49,6 @@ public class Product {
         this.price = price;
         this.description = description;
         this.imageUrl = imageUrl;
-    }
-
-    public Product() {
     }
 
     @Override

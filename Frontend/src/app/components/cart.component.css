@@ -59,11 +59,21 @@ table.text td {
 td.rightcol {
   text-align: right;
 }
-
-body {
+.h2{
+  margin-left: 52%;
+}
+.det{
+  margin-left: 35%;
+}
+.tditem{
+  text-align: center;
+}
+.body {
   background-color: #eee;
 }
-
+.empty{
+  margin-left: 10%;
+}
 *[role="form"] {
   max-width: 530px;
   padding: 15px;

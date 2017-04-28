@@ -1,5 +1,6 @@
 package netckr.shop.dao;
 
+import netckr.shop.model.Category;
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,8 @@ public class CategoryDaoImpl implements CategoryDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public List getCategories() {
-        List list = this.sessionFactory
+    public List<Category> getCategories() {
+        List<Category> list = this.sessionFactory
                 .getCurrentSession()
                 .createQuery("from Category category").list();
         logger.info("Get categories ok");

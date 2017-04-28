@@ -37,8 +37,8 @@ public class ProductController {
     private TokenGeneration tokenGeneration;
 
     @RequestMapping(value = "/list/{id}", method = RequestMethod.GET)
-    public List simpleList(@PathVariable("id") int id) {
-        List productsList = productService.simpleListProduct(id);
+    public List<Product> simpleList(@PathVariable("id") int id) {
+        List<Product> productsList = productService.simpleListProduct(id);
         logger.info("List getting");
         return productsList;
     }

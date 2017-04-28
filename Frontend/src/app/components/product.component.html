@@ -29,14 +29,14 @@
       </tr>
       <tr>
         <th scope="row">Description</th>
-        <td style="width: 10%">{{product?.description}}</td>
+        <td class="description">{{product?.description}}</td>
 
       </tr>
       </tbody>
     </table>
   </div>
   <div>
-    <button style="float: left" (click)="goBack()" class="btn btn-info">Back</button>
-    <button style="float: right" (click)="addToCart(product)" class="btn btn-info">To cart</button>
+    <button (click)="goBack()" class="btn btn-info bb">Back</button>
+    <button (click)="addToCart(product)" class="btn btn-info cb">To cart</button>
   </div>
 </div>

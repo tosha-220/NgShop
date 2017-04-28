@@ -1,5 +1,8 @@
 package netckr.shop.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,59 +12,29 @@ public class Customer {
     @Id
     @GeneratedValue
     @Column(name = "id")
+    @Getter
+    @Setter
     private int id;
 
     @Column(name = "name")
+    @Getter
+    @Setter
     private String name;
 
     @Column(name = "email")
+    @Getter
+    @Setter
     private String email;
 
     @Column(name = "address")
+    @Getter
+    @Setter
     private String address;
 
     @Column(name = "mobile")
+    @Getter
+    @Setter
     private String mobile;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
 
     @Override
     public String toString() {

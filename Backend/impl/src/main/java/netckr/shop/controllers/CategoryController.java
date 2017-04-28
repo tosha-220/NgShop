@@ -1,5 +1,6 @@
 package netckr.shop.controllers;
 
+import netckr.shop.model.Category;
 import netckr.shop.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @RequestMapping(value = "/categories", method = RequestMethod.GET)
-    public List getCategories() {
+    public List<Category> getCategories() {
         return this.categoryService.getCategories();
     }
 }

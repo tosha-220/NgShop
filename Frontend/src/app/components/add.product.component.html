@@ -1,5 +1,5 @@
 <p-growl [value]="msgs"></p-growl>
-<div style="width: 50%;padding:20px;margin-left: 30%">
+<div class="add">
   <div class="details">
     <form name="form">
       <h3 align="center">Adding new Product</h3>
@@ -23,8 +23,8 @@
         <input type="file" name="file" class="form-control-file" aria-describedby="fileHelp" #fileInput
                onchange="check();" id="file">
       </div>
-      <div align="center" style="margin-top: 2%" class="form-group">
-        <div style="width: 30%">
+      <div align="center" class="form-group presub">
+        <div class="submit">
           <button type="submit" id="submit" disabled="disabled" class="btn btn-primary btn-block"
                   (click)="addProduct()">Create item
           </button>

@@ -17,11 +17,11 @@ public class ProductDaoImpl implements ProductDAO {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public List simpleListProduct(int categoryId) {
-        List list = sessionFactory
+    public List<Product> simpleListProduct(int categoryId) {
+        List<Product> list = sessionFactory
                 .getCurrentSession()
                 .createQuery("from Product product " +
-                "where product.categoryId=:categoryId ")
+                        "where product.categoryId=:categoryId ")
                 .setInteger("categoryId", categoryId)
                 .list();
         logger.info("List by id created");

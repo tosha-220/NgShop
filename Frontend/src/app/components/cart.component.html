@@ -1,7 +1,7 @@
 <p-growl [value]="msgs"></p-growl>
-<div *ngIf="totalSum ==0" align="center"><h2>Cart is empty</h2></div>
+<div *ngIf="totalSum ==0" align="center"><h2 class="empty">Cart is empty</h2></div>
 <div *ngIf="totalSum>0">
-  <h2 style="margin-left: 52%">Shopping cart</h2>
+  <h2 class="h2">Shopping cart</h2>
   <table class="cart" id="tg" align="center">
     <tr>
       <th width="250">Title</th>
@@ -13,7 +13,7 @@
     <tr *ngFor="let item of cart">
       <td align="center">{{item?.item?.title}}</td>
       <td align="center">{{item?.item?.price}}</td>
-      <td style="text-align: center">
+      <td class="tditem">
         <span (click)=changeQuantity(item?.item?.title,-1) class="glyphicon glyphicon-minus pointer"></span>
         {{item.quantity}}
         <span (click)=changeQuantity(item?.item?.title,1) class="glyphicon glyphicon-plus pointer"></span>
@@ -30,7 +30,7 @@
   <div class="details">
     <form class="form-horizontal" role="form" (ngSubmit)="buy(customer)">
       <div class="form-group">
-        <h2 style="margin-left: 35%">Buying details</h2>
+        <h2 class="det">Buying details</h2>
         <label for="firstName" class="col-sm-3 control-label">Full Name</label>
         <div class="col-sm-9">
           <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus required

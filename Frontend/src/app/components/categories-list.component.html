@@ -3,7 +3,7 @@
   <div class="container-fluid" style="position: relative">
     <div class="row" style="margin-top:10px;">
       <div class="col-md-6">
-        <img src="../../public/images/imgonline-com-ua-Resize-mK2C8wut1KjF.jpg"> NG-SHOP
+        <img class="img-embl" src="../../public/images/newEmbleme.jpg"> NG-SHOP
       </div>
       <div *ngIf="isLoggin()&&isAdmin()">You login with admin rights!</div>
       <div class="col-md-6">
@@ -27,7 +27,7 @@
             </ul>
           </div>
           <ul class="nav navbar-nav navbar-right">
-            <li><a (click)="cart()" style="color: inherit;"><span
+            <li><a (click)="cart()" class="cart"><span
               class="glyphicon glyphicon-shopping-cart "></span>Cart</a></li>
             <li *ngIf="!isLoggin()" (click)="login()" class="login">Login</li>
             <li *ngIf="isLoggin()" (click)="logout()" class="login">Logout</li>
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="categories" class="categ" style="position: absolute;bottom:-225px">
+    <div *ngIf="categories" class="categ">
       <div class="row">
         <div class="col-sm-4">
           <div class="single">

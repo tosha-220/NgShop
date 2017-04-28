@@ -1,6 +1,7 @@
 package netckr.shop.service;
 
 import netckr.shop.dao.CategoryDao;
+import netckr.shop.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -14,7 +15,7 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryDao categoryDao;
 
     @Transactional
-    public List getCategories() {
+    public List<Category> getCategories() {
         return this.categoryDao.getCategories();
     }
 }
