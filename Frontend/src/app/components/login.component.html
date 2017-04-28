@@ -1,0 +1,9 @@
+<form class="form-signin loginform" role="form">
+  <h2 class="form-signin-heading" align="center">Please sign in</h2>
+  <input type="text" name="username" class="form-control" placeholder="Name" required autofocus
+         [(ngModel)]="model.username" #username="ngModel" required>
+  <input type="password" name="password" class="form-control" placeholder="Password" required
+         [(ngModel)]="model.password" #password="ngModel" required><br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">Sign in</button>
+  <div *ngIf="incorrectLogin" class="alert alert-danger">Username or password is incorrect</div>
+</form>

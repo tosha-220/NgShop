@@ -4,3 +4,31 @@
   width: 75%;
   float: right;
 }
+
+.img {
+  height: 100px;
+  width: 100px;
+}
+
+.add {
+  float: inherit;
+}
+
+.products {
+  padding: 20px;
+}
+
+.price {
+  margin-top: 10px;
+  margin-bottom: -5px
+}
+.detail{
+  margin-bottom: 5px;
+}
+.button{
+  margin-top: 5px;
+}
+.notfound{
+  margin-left: 10%;
+}
+

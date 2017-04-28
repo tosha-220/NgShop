@@ -12,13 +12,24 @@ import {Categories} from "../api/category.model";
 @Injectable()
 export class CategoriesService {
 
+  private listCategoriesUrl = "categories";
+
   constructor(private http: Http,
               private routeService: RouteService) {
   }
 
   getCategories(): Observable<Categories[]> {
-    return this.http.get(this.routeService.routes.listCategoriesUrl)
+    return this.http.get(this.routeService.routes.url + this.listCategoriesUrl)
       .map(res => res.json()).catch(this.handleError);
+  }
+
+  isLoggin() {
+    return !!localStorage.getItem('currentUser');
+  }
+
+  getUserName() {
+    let item = localStorage.getItem('currentUser');
+    return JSON.parse(item).username;
   }
 
   private handleError(error: Response | any) {

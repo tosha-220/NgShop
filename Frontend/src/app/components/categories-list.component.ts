@@ -5,6 +5,7 @@ import {Categories} from "../api/category.model";
 import {CategoriesService} from "../service/category.service";
 import {ProductService} from "../service/product.service";
 import {Product} from "../api/product.model";
+import {LoginService} from "../service/login.service";
 
 @Component({
   moduleId: module.id,
@@ -14,19 +15,20 @@ import {Product} from "../api/product.model";
 })
 export class CategoriesComponent implements OnInit {
   categories: Categories[];
-  msgs: Message[] = [];
   selectedProduct: Product;
   id: string;
+  error: Message[] = [];
 
   constructor(private router: Router,
               private categoriesService: CategoriesService,
-              private productService: ProductService) {
+              private productService: ProductService,
+              private loginService: LoginService) {
   }
 
 
   ngOnInit(): void {
     this.categoriesService.getCategories().subscribe(r => this.categories = r,
-      error => this.msgs = error);
+      error => this.error = error);
   }
 
   cart() {
@@ -34,12 +36,44 @@ export class CategoriesComponent implements OnInit {
   }
 
   listItems(id: number): void {
+    console.log(id);
     this.router.navigate(['/item', id]);
   }
 
   search(): void {
-    this.productService.search(this.id).subscribe(r => this.selectedProduct = r);
-    this.router.navigate(['/detail', this.selectedProduct.id]);
+    this.productService.search(this.id).subscribe(r => {
+      this.selectedProduct = r;
+      this.router.navigate(['/detail', this.selectedProduct.id])
+    },err=>this.error=err);
+  }
 
+  login() {
+    this.router.navigate(['/login']);
+  }
+
+  logout() {
+    this.loginService.logout().subscribe(res => {
+      this.router.navigate(['/home'])
+    },err=>this.error=err);
+  }
+
+  isLoggin() {
+    return this.categoriesService.isLoggin();
+  }
+
+  isAdmin() {
+    return this.productService.isAdmin();
+  }
+
+  getUserName() {
+    return this.categoriesService.getUserName();
+  }
+
+  setTitle(title: string) {
+    this.productService.setTitle(title);
+  }
+
+  getinf() {
+    console.log(localStorage)
   }
 }

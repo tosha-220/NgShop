@@ -3,30 +3,20 @@
 }
 
 .category-heading {
-  width: 200px;
-  float: right;
-  display: block;
-  padding-left: 20%;
-  padding-bottom: 0%;
-  padding-right: 10%;
-  background-color: #ff5c4d;
-  margin-left: -5%;
-  margin-right: 15%;
-  margin-top: 9px;
-  border-radius: 5%;
+  padding-top: 3%;
+  padding-left: 15%;
 }
 
 .category-heading h4 {
   font-size: 15px;
   font-family: Arial;
   font-style: normal;
-  color: white;
+  color: black;
 }
 
 .category-heading h4:before {
   float: left;
   content: "\f0c9";
-  display: block;
   float: left;
   font-family: "FontAwesome";
   font-size: 25px;
@@ -36,20 +26,35 @@
   margin-top: -5px;
 }
 
-/*cписок категорий*/
+.login {
+  margin-top: 8%;
+  margin-left: 70px;
+}
+
+.login:hover {
+  color: red;
+}
+
 .categ {
+  position: absolute;
+  bottom: -225px;
   float: left;
-  margin-left: 5.3%;
-  margin-top: -20px;
-  border-radius: 20px;
+  margin-left: 4%;
+  margin-top: -6%;
+}
+
+.listcateg {
+  margin-left: 30%;
+  text-transform: uppercase;
+}
+
+.nav li a:hover {
+  background-color: #cccccc;
 }
 
 .single {
+  width: 15em;
   margin-left: 10px;
-  margin-top: 0px;
-  background: #fcfcfc;
-  border: 1px solid #f0f0f0;
-  border-radius: 20px;
 }
 
 .single h3.side-title {
@@ -75,19 +80,33 @@
 }
 
 .single li div {
-  color: white;
   font-size: 14px;
   text-transform: uppercase;
   border-bottom: 1px solid #f0f0f0;
   line-height: 40px;
-  display: block;
   text-decoration: none;
-  background-color: #ff5c4d;
-  /*background-color: #0D47A1;*/
 }
 
-.single li div:hover {
+.listyle {
+  background: #337ab7;
+  border-color: #46b8da;
+  color: white;
+}
+
+.listyle1 {
+  background: #5bc0de;
+  border-color: #46b8da;
+  color: white;
+}
+
+.listyle div:hover {
+  background-color: #cccccc;
   color: black;
+  left: 2em;
+}
+
+.cart {
+  color: inherit;
 }
 
 .single li:last-child div {
@@ -95,10 +114,16 @@
 }
 
 .navbar-style {
-  background: linear-gradient(to bottom, #337ab7 0%, #ebedf0 90%);
+  background: #5bc0de;
+  border-color: #46b8da;
   border-bottom: hidden;
 }
 
 .navbar-new {
   margin-left: 30px;
+}
+
+.img-embl {
+  width: 40px;
+  height: 40px;
 }

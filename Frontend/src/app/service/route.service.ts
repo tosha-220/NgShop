@@ -17,10 +17,5 @@ export class RouteService {
   }
 }
 export interface Routes {
-  listUrl: string;
-  detailsUrl: string;
-  listCategoriesUrl: string;
-  imageUrl: string;
-  searchUrl: string;
-  buyingUrl: string;
+  url: string;
 }

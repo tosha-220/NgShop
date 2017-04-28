@@ -1,5 +1,4 @@
 import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute} from "@angular/router";
 import {CartService} from "../service/cart.service";
 import {Cart} from "../api/cart.model";
 import {Location} from "@angular/common";
@@ -13,14 +12,13 @@ import {Message} from "@angular/compiler/src/i18n/i18n_ast";
   styleUrls: ['cart.component.css']
 })
 export class CartComponent implements OnInit {
-  constructor(private route: ActivatedRoute,
-              private cartService: CartService,
+  constructor(private cartService: CartService,
               private location: Location) {
   }
 
   cart: Cart[];
   totalSum: number;
-  user: User = new User();
+  customer: User = new User();
   msgs: Message[] = [];
 
   ngOnInit(): void {
@@ -40,8 +38,9 @@ export class CartComponent implements OnInit {
     this.totalSum = this.cartService.getTotalSum();
   }
 
-  buy(user: User): void {
-    this.cartService.buy(user).subscribe(pr => this.goodInfo(pr), err => this.msgs = err);
+  buy(customer: User): void {
+    console.log(customer)
+    this.cartService.buy(customer).subscribe(pr => this.goodInfo(pr), err => this.msgs = err);
   }
 
   private goodInfo(info: Message[]) {
@@ -51,7 +50,6 @@ export class CartComponent implements OnInit {
       this.cartService.totalSum = 0;
       this.cart = this.cart.filter(entry => entry.item.title == "");
       this.cartService.saveCart(this.cart);
-    }, 2000);
-
+    }, 500);
   }
 }

@@ -1,49 +1,46 @@
 <p-growl [value]="msgs"></p-growl>
-<div *ngIf="totalSum ==0" align="center">Cart is empty</div>
+<div *ngIf="totalSum ==0" align="center"><h2 class="empty">Cart is empty</h2></div>
 <div *ngIf="totalSum>0">
-
+  <h2 class="h2">Shopping cart</h2>
   <table class="cart" id="tg" align="center">
-    <h2 align="center">Shopping cart</h2>
     <tr>
       <th width="250">Title</th>
       <th width="250">Price</th>
       <th width="250">Quantity</th>
       <th width="250">Sum</th>
+      <th width="40"></th>
     </tr>
     <tr *ngFor="let item of cart">
       <td align="center">{{item?.item?.title}}</td>
       <td align="center">{{item?.item?.price}}</td>
-      <td style="text-align: center">
+      <td class="tditem">
         <span (click)=changeQuantity(item?.item?.title,-1) class="glyphicon glyphicon-minus pointer"></span>
         {{item.quantity}}
         <span (click)=changeQuantity(item?.item?.title,1) class="glyphicon glyphicon-plus pointer"></span>
       </td>
       <td align="center">{{item?.sum}}</td>
-      <td style="border-color: white">
-        <button type="button" (click)="removeByTitle(item?.item?.title)" class="btn btn-danger">
-          <span class="glyphicon glyphicon-remove"></span> Remove
-        </button>
+      <td>
+        <img class="imageDel" (click)="removeByTitle(item?.item?.title)" src="public/images/cancel.png">
       </td>
     </tr>
     <tr>
       <div>Total sum: {{totalSum}}</div>
     </tr>
-    <div *ngIf="totalSum ==0">Cart is empty</div>
   </table>
   <div class="details">
-    <form class="form-horizontal" role="form" (ngSubmit)="buy(user)">
-      <h3 align="center">Bying details</h3>
+    <form class="form-horizontal" role="form" (ngSubmit)="buy(customer)">
       <div class="form-group">
+        <h2 class="det">Buying details</h2>
         <label for="firstName" class="col-sm-3 control-label">Full Name</label>
         <div class="col-sm-9">
           <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus required
-                 [(ngModel)]="user.name" name="name">
+                 [(ngModel)]="customer.name" name="name">
         </div>
       </div>
       <div class="form-group">
         <label for="email" class="col-sm-3 control-label">Email</label>
         <div class="col-sm-9">
-          <input type="email" id="email" placeholder="Email" class="form-control" required [(ngModel)]="user.email"
+          <input type="email" id="email" placeholder="Email" class="form-control" required [(ngModel)]="customer.email"
                  name="email">
         </div>
       </div>
@@ -51,7 +48,7 @@
       <div class="form-group">
         <label f class="col-sm-3 control-label">Address</label>
         <div class="col-sm-9">
-          <input type="text" placeholder="Address" class="form-control" required [(ngModel)]="user.address"
+          <input type="text" placeholder="Address" class="form-control" required [(ngModel)]="customer.address"
                  name="address">
         </div>
       </div>
@@ -59,14 +56,14 @@
       <div class="form-group">
         <label f class="col-sm-3 control-label">Mobile</label>
         <div class="col-sm-9">
-          <input type="text" placeholder="Address" class="form-control" required [(ngModel)]="user.mobile"
+          <input type="number" placeholder="Mobile" class="form-control" required [(ngModel)]="customer.mobile"
                  name="address">
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-9 col-sm-offset-3">
-          <button type="submit" class="btn btn-primary btn-block" (click)="buy">Buy</button>
+          <button type="submit" class="btn btn-primary btn-block">Buy</button>
         </div>
       </div>
     </form>
